@@ -1,0 +1,21 @@
+<div class="header">
+<br>
+<h1>TAYGAmemory</h1>
+<%= link_to '新規投稿', '/posts/new' %>
+</div>
+
+
+<div class="content">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-image">
+        <%= image_tag post.image.to_s %>
+      </div>
+      <div class="post-content">
+        <%= post.content %>
+      </div>
+      <div class="post-date">
+        投稿日時：<%= post.created_at %>
+      </div>
+  <% end %>
+</div>
