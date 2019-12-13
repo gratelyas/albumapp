@@ -10,7 +10,7 @@
       </h3>
       <%= form.text_field :content, placeholder: "思い出の言葉" %>
       <%= form.file_field :image, placeholder: "Image Url" %>
-      <label class="date-label" for="">撮影日</label>
+      <label class="date-label" for="">撮影日を記述</label>
       <%= form.date_select :image_at, class: 'date-label' %>
       <%= form.submit "SEND" %>
     <% end %>
