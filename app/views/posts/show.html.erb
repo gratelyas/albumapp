@@ -1,0 +1,24 @@
+<div class="header">
+<br>
+<h1>TAYGAmemory</h1>
+<%= link_to "編集", edit_post_path(@post.id) %>
+<%= link_to '削除', post_path(@post.id), method: :delete %>
+<%= link_to 'アルバム', '/posts' %>
+
+</div>
+
+
+<div class="post">
+  <div class="post-image">
+    <%= image_tag @post.image.to_s %>
+  </div>
+  <div class="photdate">
+    撮影日：<%= @post.image_at %>
+  </div>
+  <div class="post-content">
+    <%= @post.content %>
+  </div> 
+</div>
+
+<div class="footer">
+</div>
