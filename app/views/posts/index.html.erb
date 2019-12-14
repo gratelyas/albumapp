@@ -1,7 +1,7 @@
 <div class="header">
 <br>
 <h1>TAYGAmemory</h1>
-<%= link_to '新規投稿', '/posts/new' %>
+<%= link_to '新規投稿', '/posts/new', class: 'newpostlink'%>
 </div>
 
 
@@ -9,14 +9,20 @@
   <% @posts.each do |post| %>
     <div class="post">
       <div class="post-image">
-        <%= image_tag post.image.to_s %>
+        <%= link_to image_tag(post.image.to_s), post_path(post.id) %>
       </div>
       <div class="photdate">
         撮影日：<%= post.image_at %>
       </div>
       <div class="post-content">
         <%= post.content %>
-      </div>
-      
+      </div>      
   <% end %>
 </div>
+
+
+<div class="footer">
+<%= paginate @posts, class: 'page' %>
+</div>
+
+
